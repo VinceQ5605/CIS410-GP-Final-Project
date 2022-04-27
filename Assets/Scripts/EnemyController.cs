@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     [Range(0f, 1f)]
     public float directionChangeProbability;
     public int maxHealth;
+    public GameObject baseObject;
 
     private bool isBusy = false; // is this enemy busy doing a coroutine?
     private bool oriented = false; // the cube is rotated to align with the grid
@@ -34,7 +35,7 @@ public class EnemyController : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         transform = GetComponent<Transform>();
-        baseLocation = new Vector3(0, 1, 0);
+        baseLocation = baseObject.transform.position;
         positionBeforePreviousJump = Vector3.zero;
         jumpableTags = new string[] { "Ground",  "Barrier"};
         JumpDirection(baseLocation - transform.position);

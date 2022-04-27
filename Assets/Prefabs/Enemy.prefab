@@ -134,3 +134,5 @@ MonoBehaviour:
   rotationSpeed: 20
   freezeRotationTime: 1
   directionChangeProbability: 0.5
+  maxHealth: 0
+  baseObject: {fileID: 0}

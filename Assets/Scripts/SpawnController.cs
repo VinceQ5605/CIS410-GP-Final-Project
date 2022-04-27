@@ -8,6 +8,7 @@ public class SpawnController : MonoBehaviour
     public float rotationDelta;
     public float spawnTimeDelta;
     public GameObject enemyPrefab;
+    public GameObject baseObject;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class SpawnController : MonoBehaviour
         for (int i = 0; i < numberOfEnemies; i++)
         {
             GameObject newEnemy = Instantiate(enemyPrefab, position, Quaternion.identity);
+            newEnemy.GetComponent<EnemyController>().baseObject = baseObject;
             newEnemy.SetActive(true);
             enemyList[i] = newEnemy;
             newEnemy.GetComponent<Rigidbody>().velocity = speed * direction;
