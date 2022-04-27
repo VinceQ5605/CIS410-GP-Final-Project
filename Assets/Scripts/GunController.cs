@@ -45,9 +45,10 @@ public class GunController : MonoBehaviour
 
         void FireGrenade()
         {
+            Vector3 direction = cam.transform.forward;
             GameObject grenadeCopy = Instantiate(grenade, shotPos.position, shotPos.rotation) as GameObject;
             grenadeRB = grenadeCopy.GetComponent<Rigidbody>();
-            grenadeRB.AddForce(0, 0, firePower, ForceMode.Impulse);
+            grenadeRB.AddForce(100*direction, ForceMode.Impulse);
             Instantiate(explosion, shotPos.position, Quaternion.LookRotation(hit.normal));
         }
     }

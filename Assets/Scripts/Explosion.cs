@@ -20,7 +20,11 @@ public class Explosion : MonoBehaviour
             Vector3 direction = gameObject.transform.position - transform.position;
 
             direction.Normalize();
-            gameObject.SendMessage("Hit", knockBackForce * direction);
+            EnemyController enemyController = gameObject.GetComponent<EnemyController>();
+            if (enemyController != null)
+            {
+                gameObject.GetComponent<EnemyController>().Hit(knockBackForce * direction);
+            }
         }
         this.gameObject.SetActive(false);
     }
