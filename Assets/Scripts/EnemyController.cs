@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     public float freezeRotationTime = 1f;
     [Range(0f, 1f)]
     public float directionChangeProbability;
+    public int maxHealth;
 
     private bool isBusy = false; // is this enemy busy doing a coroutine?
     private bool oriented = false; // the cube is rotated to align with the grid
@@ -26,6 +27,7 @@ public class EnemyController : MonoBehaviour
     private new Rigidbody rigidbody;
     private new Transform transform;
     private List<GameObject> onTopOfTheseObjects;
+    private int currentHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,7 @@ public class EnemyController : MonoBehaviour
         //StartCoroutine(Wait(Random.Range(.2f,3f))); // delay for a random amount of time
         onTopOfTheseObjects = new List<GameObject>();
         rigidbody.freezeRotation = true; // this should not be necessary
+        currentHealth = maxHealth;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -180,6 +183,20 @@ public class EnemyController : MonoBehaviour
         rigidbody.AddForce(200 * height * Vector3.up); // jump straight up
         StartCoroutine(DelayedDash(jumpDirection, .6f)); // dash in the direction determined in JumpDirection
         StartCoroutine(Wait(jumpCoolDown + Random.Range(0f, .3f)));
+    }
+
+
+    public void Hit(Vector3 direction)
+    {
+        //Disorient();
+        rigidbody.AddForce(10 * direction);
+        currentHealth--;
+        if (currentHealth == 0)
+            Die();
+    }
+    public void Die()
+    {
+        this.gameObject.SetActive(false);
     }
 
     public void Disorient()
