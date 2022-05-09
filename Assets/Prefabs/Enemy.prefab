@@ -93,7 +93,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4255801647856356544}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0e2a5b2d5d98bea4ebf405870a2c9440, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -127,12 +127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e034a6c97b1b3243a2735b09f6d2876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpCoolDown: 2.5
+  jumpCoolDown: 1
   height: 2
-  jumpDistance: 5
+  jumpDistance: 12.12
   groupingDistance: 5
   rotationSpeed: 20
   freezeRotationTime: 1
   directionChangeProbability: 0.5
-  maxHealth: 0
-  baseObject: {fileID: 0}
+  maxHealth: 4

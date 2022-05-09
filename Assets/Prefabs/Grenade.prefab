@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7360671676f88144b8b56fca62e86f15, type: 2}
+  - {fileID: 2100000, guid: 44a974a3444681d4c934a0ac5ad626c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,7 +93,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3127554224881512476}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 96a37dca2cb85d544868dcd35b30049b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -128,6 +128,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
-  explosion: {fileID: 6289844528301281555, guid: 6c4a20c2ad2c22044b73eaf2189a77e7,
+  explosionPrefab: {fileID: 6289844528301281555, guid: 6c4a20c2ad2c22044b73eaf2189a77e7,
     type: 3}
-  minY: -20
+  minY: -5
+  explosionRadius: 2.13
+  explosionIntensity: 10.02
+  grenadeMaterials:
+  - {fileID: 2100000, guid: 44a974a3444681d4c934a0ac5ad626c6, type: 2}
+  - {fileID: 2100000, guid: 7360671676f88144b8b56fca62e86f15, type: 2}
+  - {fileID: 2100000, guid: b1526c37e3dc2c74cb6c8af161af4abd, type: 2}
+  - {fileID: 2100000, guid: a807f53e00d60bf46b3ed65889277ed2, type: 2}
+  - {fileID: 2100000, guid: d439eaa4bf34c964095d5bd7a24ccbc0, type: 2}

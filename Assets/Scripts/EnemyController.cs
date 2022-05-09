@@ -16,8 +16,8 @@ public class EnemyController : MonoBehaviour
     [Range(0f, 1f)]
     public float directionChangeProbability;
     public int maxHealth;
-    public GameObject baseObject;
 
+    private GameObject baseObject;
     private bool isBusy = false; // is this enemy busy doing a coroutine?
     private bool oriented = false; // the cube is rotated to align with the grid
     private Vector3 baseLocation;  //! change to base.transform.position once we have a base object
@@ -44,6 +44,12 @@ public class EnemyController : MonoBehaviour
         rigidbody.freezeRotation = true; // this should not be necessary
         currentHealth = maxHealth;
     }
+
+    public void SetBase(GameObject baseObject)
+    {
+        this.baseObject = baseObject;
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -159,7 +165,7 @@ public class EnemyController : MonoBehaviour
         if (transform.position != previousPosition)
         {
             previousPosition = transform.position;
-            StartCoroutine(Wait(1f)); // wait for 1 seconds before checking again
+            StartCoroutine(Wait(.4f)); // wait before checking again
             return;
         }
 

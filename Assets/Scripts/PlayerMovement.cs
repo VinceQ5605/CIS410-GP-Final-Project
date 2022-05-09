@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     public float speed = 15f;
+    public float sprintSpeed = 30f;
     public float gravity = -9.81f;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -38,8 +39,15 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * speed * Time.deltaTime);
-
+        move.Normalize();
+        if (Input.GetAxis("Sprint") == 1f)
+        {
+            controller.Move(move * sprintSpeed * Time.deltaTime);
+        }
+        else
+        {
+            controller.Move(move * speed * Time.deltaTime);
+        }
 
 
         velocity.y += gravity * Time.deltaTime;

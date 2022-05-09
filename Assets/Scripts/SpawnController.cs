@@ -31,7 +31,7 @@ public class SpawnController : MonoBehaviour
         for (int i = 0; i < numberOfEnemies; i++)
         {
             GameObject newEnemy = Instantiate(enemyPrefab, position, Quaternion.identity);
-            newEnemy.GetComponent<EnemyController>().baseObject = baseObject;
+            newEnemy.GetComponent<EnemyController>().SetBase(baseObject);
             newEnemy.SetActive(true);
             enemyList[i] = newEnemy;
             newEnemy.GetComponent<Rigidbody>().velocity = speed * direction;
