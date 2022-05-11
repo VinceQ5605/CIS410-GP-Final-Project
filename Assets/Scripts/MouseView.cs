@@ -5,8 +5,8 @@ using UnityEngine;
 public class MouseView : MonoBehaviour
 {
 
-    public float mouseSensitivityX = 300f;
-    public float mouseSensitivityY = 500f;
+    public float mouseSensitivityX = 200f;
+    public float mouseSensitivityY = 200f;
     public Transform playerBody;
     float x_Rotation = 0f;
     int frameCount = 0;
