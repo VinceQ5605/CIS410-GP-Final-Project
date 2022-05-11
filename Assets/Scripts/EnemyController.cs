@@ -190,6 +190,8 @@ public class EnemyController : MonoBehaviour
         rigidbody.AddForce(200 * height * Vector3.up); // jump straight up
         StartCoroutine(DelayedDash(jumpDirection, .6f)); // dash in the direction determined in JumpDirection
         StartCoroutine(Wait(jumpCoolDown + Random.Range(0f, .3f)));
+
+        hitBase();
     }
 
 
@@ -204,6 +206,15 @@ public class EnemyController : MonoBehaviour
     public void Die()
     {
         this.gameObject.SetActive(false);
+    }
+
+    public void hitBase()
+    {
+        
+        if (Vector3.Distance(transform.position, baseLocation) <= 7f)
+        {
+            Die();
+        }
     }
 
     public void Disorient()
