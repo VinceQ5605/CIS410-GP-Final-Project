@@ -127,11 +127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 230a9263b9d3a534598eb24d2cc68459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 5
+  lifeTime: 4
   explosionPrefab: {fileID: 6289844528301281555, guid: 6c4a20c2ad2c22044b73eaf2189a77e7,
     type: 3}
   minY: -5
-  explosionRadius: 2.13
+  explosionRadius: 2.5
   explosionIntensity: 10.02
   grenadeMaterials:
   - {fileID: 2100000, guid: 44a974a3444681d4c934a0ac5ad626c6, type: 2}

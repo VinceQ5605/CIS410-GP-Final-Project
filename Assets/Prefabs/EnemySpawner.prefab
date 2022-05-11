@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a827a4926dadad489d605b77d9cf4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 6
   rotationDelta: 70
   spawnTimeDelta: 0.6
   enemyPrefab: {fileID: 4255801647856356544, guid: def186317b154e44db32c21cbb2c110e,
     type: 3}
+  baseObject: {fileID: 0}
